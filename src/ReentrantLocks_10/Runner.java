@@ -66,7 +66,8 @@ public class Runner {
         System.out.println("Woken up!");
         try {
             increment();
-        } finally {
+            System.out.println("T1 finish");
+        } finally { //guarantee to be called
             lock.unlock();
         }
     }
@@ -80,6 +81,7 @@ public class Runner {
         cond.signal();
         try {
             increment();
+            System.out.println("T2 finish");
         } finally {
             //should be written to unlock Thread whenever signal() is called
             lock.unlock();
