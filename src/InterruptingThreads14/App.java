@@ -12,7 +12,7 @@ import java.util.concurrent.*;
  * <p>
  * Incidentally, it is important NOT to confuse thread interruption with either
  * software interrupts (where the CPU automatically interrupts the current
- * instruction flow in order to call a registered piece of code periodically— as
+ * instruction flow in order to call a registered piece of code periodically鈥� as
  * in fact happens to drive the thread scheduler) and hardware interrupts (where
  * the CPU automatically performs a similar task in response to some hardware
  * signal).
