@@ -124,7 +124,9 @@ public class LRU <K,T> {
         synchronized (this) {      
         	Node itr = head;
         	deleteKey = new ArrayList<>();
+
             while (itr.next!=null && itr.next.key!=null) {
+            	System.out.println("asdfasdf"+(now-itr.next.lastAccessed));
                 if ((now > (timeToLive + itr.next.lastAccessed))) {
                     deleteKey.add(itr.next.key);
                 }

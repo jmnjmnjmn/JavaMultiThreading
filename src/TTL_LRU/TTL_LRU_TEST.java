@@ -13,10 +13,10 @@ public class TTL_LRU_TEST {
  
 //        System.out.println("\n\n==========Test1: crunchifyTestAddRemoveObjects ==========");
 //        crunchifyCache.crunchifyTestAddRemoveObjects();
-//        System.out.println("\n\n==========Test2: crunchifyTestExpiredCacheObjects ==========");
-//        crunchifyCache.crunchifyTestExpiredCacheObjects();
-        System.out.println("\n\n==========Test3: crunchifyTestObjectsCleanupTime ==========");
-        crunchifyCache.crunchifyTestObjectsCleanupTime();
+        System.out.println("\n\n==========Test2: crunchifyTestExpiredCacheObjects ==========");
+        crunchifyCache.crunchifyTestExpiredCacheObjects();
+//        System.out.println("\n\n==========Test3: crunchifyTestObjectsCleanupTime ==========");
+//        crunchifyCache.crunchifyTestObjectsCleanupTime();
     }
  
     private void crunchifyTestAddRemoveObjects() {
@@ -48,13 +48,14 @@ public class TTL_LRU_TEST {
         // Test with timeToLiveInSeconds = 1 second
         // timerIntervalInSeconds = 1 second
         // maxItems = 10
-        LRU<String, String> cache = new LRU<String, String>(1,1,10);
+        LRU<String, String> cache = new LRU<String, String>(500,1,10);
  
         cache.put("eBay", "eBay");
         cache.put("Paypal", "Paypal");
+        
         // Adding 3 seconds sleep.. Both above objects will be removed from
         // Cache because of timeToLiveInSeconds value
-        Thread.sleep(2000);
+        Thread.sleep(3002);
  
         System.out.println("Two objects are added but reached timeToLive. cache.size(): " + cache.size());
  
